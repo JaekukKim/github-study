@@ -1,0 +1,27 @@
+/* 브라우저 기본값의 여백을 초기화 하는 과정이다 body안에
+margin 과 padding을 0으로 설정해 주면 초기화 되는것이나 마찬가지이다. */
+body {
+    margin: 0;
+    padding: 0;
+}
+
+div{
+    /* background-color: brown;
+    width: 150px;
+    height: 30px;
+    margin: 20px;
+    padding: 20px; */
+    /* 블럭 요소는 여백이라고 하는 개념을 온전히 전부 사용이 가능하다!*/
+    /* 높이만 지정하고 가로 사이즈는 지정해주지 않았는데도 화면의 모든 가로부분이 색칠되었다 */
+}
+
+span{
+    background-color: aquamarine;
+    height: 20px;
+    width: 150px;
+    margin: 20px;
+    /* 분명 상하좌우 여백을 20px씩 주었는데 여백은 좌우로만 있다!! 이로써 인라인 요소는 상하여백을 사용 할 수 없는점을 알 수 있다. */
+    padding: 20px;
+    /* div태그에 아무것도 주어지지 않았을때 상하좌우 여백의 의미가 사라졌다, 무슨뜻이냐면 영역을 침범해 글씨가 써 졌다는 얘기이다. 이로써 margin, padding의 상하여백의 의미는
+    인라인요소에선 없는게 판별이 되었다. */
+}
