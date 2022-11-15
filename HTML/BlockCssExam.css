@@ -6,11 +6,11 @@ body {
 }
 
 div{
-    /* background-color: brown;
+    background-color: brown;
     width: 150px;
     height: 30px;
     margin: 20px;
-    padding: 20px; */
+    padding: 20px;
     /* 블럭 요소는 여백이라고 하는 개념을 온전히 전부 사용이 가능하다!*/
     /* 높이만 지정하고 가로 사이즈는 지정해주지 않았는데도 화면의 모든 가로부분이 색칠되었다 */
 }
@@ -24,4 +24,5 @@ span{
     padding: 20px;
     /* div태그에 아무것도 주어지지 않았을때 상하좌우 여백의 의미가 사라졌다, 무슨뜻이냐면 영역을 침범해 글씨가 써 졌다는 얘기이다. 이로써 margin, padding의 상하여백의 의미는
     인라인요소에선 없는게 판별이 되었다. */
+    display: block;
 }
