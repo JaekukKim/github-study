@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>dom10</title>
+</head>
+	<body>
+		<h1>nodeName Property</h1>
+			<p id="document"></p>
+			<p id="html"></p>
+
+		<script type="text/javascript">
+			// html 문서의 모든 자식 중에서 두번째 노드의 이름을 선택한다.
+			document.getElementById("document").innerHTML
+			= document.childNodes[1].nodeName;
+			// 이렇게 하면 html이 나온다. 이 문서의 2번째 자식요소란 뜻이다.
+			// .chileNodes[순서].nodeName 의 식으로 작성한다. 순서는 인덱스 넘버임.
+
+			// html 노드의 모든 자식중에서 첫번째 노드의 이름을 선택.
+			document.getElementById("html").innerHTML
+			= document.childNodes[1].childNodes[2].nodeName;
+		</script>
+	</body>
+</html>
