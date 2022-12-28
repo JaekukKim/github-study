@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>이벤트 객체</title>
+  </head>
+  <body>
+    <h1>이벤트 객체를 만들어보자</h1>
+    <button id="btn">클릭</button>
+    <p id="text">이곳에 출력</p>
+    <script>
+        let btn = document.getElementById("btn");
+        btn.addEventListener("click",btnClick);
+
+        
+        function btnClick() {
+          document.getElementById("text").innerHTML
+          = "이벤트 타입 : " + event.type + ", 이벤트의 대상 : " + event.target;
+          /* event.는 이벤트와 관련된 함수를 호출 할 수 있다. */
+          /* 실전에선 거의 쓰이지 않으므로 이런게 있구나 라고만 하고 넘어가면된다. */
+        }
+    </script>
+  </body>
+</html>

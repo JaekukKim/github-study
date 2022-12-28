@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+	<script src="../js/jquery-3.6.1.min,js"></script>
+    <style>
+    table, tr, td {
+        border: 2px solid blue;
+    }
+    table {
+        margin-bottom: 15px;
+    }
+    table td {
+        width: 140px;
+        text-align: center;
+    }
+    </style>
+    <script>
+    $(function () {
+        $("#btnBefore").click(function () {
+            // id가 firstRow인 요소의 바로 앞에 새로운 <tr>요소를 추가한다.
+            $("#firstRow").before("<tr><td>앞에 새로운 행</td><td></td></tr>")
+        });
+        $("#btnAfter").click(function () {
+            // id가 firstRow인 요소의 바로 앞에 새로운 <tr>요소를 추가한다.
+            $("#firstRow").after("<tr><td></td><td>뒤에 새로운 행</td></tr>")
+        });
+    });
+    </script>
+</head>
+<body>
+    <h1>.before() 메소드 .after() 메소드</h1>
+    <p>.before() 메소드 : 선택한 요소의 바로 앞에 새로운 요소나 컨텐츠를 추가한다.</p>
+    <p>.after()  메소드 : 선택한 요소의 바로 앞에 새로운 요소나 컨텐츠를 추가한다.</p>
+
+    <table>
+        <tr id="firstRow">
+            <td>First Cell</td>
+            <td>Second Cell</td>
+        </tr>
+    </table>
+    <button id="btnBefore">row 앞에 추가</button>
+    <button id="btnAfter">row 뒤에 추가</button>
+</body>
+</html>

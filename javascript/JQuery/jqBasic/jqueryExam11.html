@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jq 11</title>
+</head>
+<body>
+    <h1>
+        메소드 체이닝에 대해 알아보자.
+    </h1>
+
+    <ul id="list">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+    </ul>
+    <button>Test Change</button>
+    
+    <script>
+       $(function () {
+            $("button").on("click",function(){
+                $("#list").find("li").eq(1).html("두번째 아이템 선택");
+                /*
+                find() : 괄호 안의 요소를 찾음
+                eq() : 괄호 안에 인덱스 넘버가 들어감.
+                위의 코드는 메소드 체이닝이 3회 이루어짐.
+                find().eq().html()
+
+                list란 아이디를 갖고있는 요소중("#list")
+                li란 요소를 찾고 (find("li"))
+                li 란 요소 중 첫번째 항목을 선택해 (eq(1))
+                글자를 바꾼다 (html("바꿀글자내용"))
+                 */
+            });
+       }) 
+    </script>
+</body>
+</html>

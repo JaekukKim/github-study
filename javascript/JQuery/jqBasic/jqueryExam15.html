@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+	<script src="../js/jquery-3.6.1.min,js"></script>
+    <style>
+    table, tr, td {
+        border: 2px solid blue;
+    }
+    table {
+        margin-bottom: 15px;
+    }
+    table td {
+        width: 140px;
+        text-align: center;
+    }
+    </style>
+    <script>
+    $(function () {
+        $("#btnIB").on("click", function () {
+            // id가 secondColumn인 요소의 바로 앞에 새로운 <tr>요소를 추가한다.
+            $("<td>저주받은 햄스터</td>").insertBefore("#secondColumn");
+        });
+        $("#btnAB").on("click", function () {
+            // id가 secondColumn인 요소의 바로 뒤에 새로운 <tr>요소를 추가한다.
+            $("<td>킹받는 햄스터</td>").insertAfter("#secondColumn");
+        });
+    });
+    </script>
+</head>
+<body>
+    <h1>.insertBefore() 메소드</h1>
+    <p>.insertBefore() 메소드 : 선택한 요소를 해당 요소의 앞에 삽입한다.<br/>
+        동작은 .before() 메소드와 같으나 source와 target의 위치가 반대이다.
+    </p>
+    <p>.insertAfter() 메소드 : 선택한 요소를 해당 요소의 뒤에 삽입한다.<br/>
+        동작은 .after() 메소드와 같으나 source와 target의 위치가 반대이다.
+    </p>
+
+    <table>
+        <tr>
+            <td>Dog</td>
+            <td id="secondColumn">Cat</td>
+        </tr>
+    </table>
+    <button id="btnIB">insertBefore</button>
+    <button id="btnAB">insertAfter</button>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jq default</title>
+</head>
+<body>
+    <h1>
+        속성 선택자
+    </h1>
+
+    <img src="images/CEO2.jpg" alt="lazyCEO">
+    <img src="images/줘팸커햄.png" alt="violentCEO">
+    <button>속성 바꾸기</button>
+    
+    <script>
+        $(function(){
+            $("button").on("click", function () {
+                $("img[alt='lazyCEO']").attr("src","images/백수커햄.png");
+                /* 태그 내부의 속성을 사용 할 시 태그네임[대괄호]식으로 작성한다. 
+                단, 대괄호 내부엔 속성 전체를 작성해주어야 한다.
+                더블쿼테이션으로 묶인 문자열의 내부 문자열을 작성해 주기 위해선
+                더블쿼테이션 내부에 싱글 쿼테이션으로 작성해 주어야한다.*/
+            });
+        })
+        $(function(){
+            $("button").on("click",function () {
+               $("img[alt='violentCEO'").attr("src","images/커햄련.png");
+            });
+        })
+    </script>
+</body>
+</html>

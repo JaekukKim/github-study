@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jq01</title>
+</head>
+<body>
+    <p>글씨 클릭하면 색깔 바뀜</p>
+    <script>
+        // Jquery
+        /* $(function(){ // jquery에서 문서가 준비됬다는 신호이다.
+            $("p").on("click", function () {
+                $("p").css("color", "green");
+            }); //<= 세미콜론 달아줘야함.
+        }) */
+        
+        //JavaScript
+        window.onload = function(){
+            let p = document.querySelector("p");
+            p.addEventListener("click",function(){
+                p.style.color = "green";
+            });
+        }
+        /* 
+            $("ID").on("실행될이벤트?메소드?", 함수작성(){
+                함수 내용...
+            })
+        */
+    //    window.onload = function () {
+    //     alert("window onload는 최초 실행시 1회밖에 작동하지 못합니다.");
+    //    }
+    //    $(document).ready(function () {
+    //     alert("document.ready는 jq문법으로 여러개를 넣을 수 있으나 권장되지 않습니다.");
+    //    })
+    </script>
+</body>
+</html>

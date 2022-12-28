@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+	<script src="../js/jquery-3.6.1.min,js"></script>
+    <style>
+        div {
+            margin: 10px;
+        }
+        .content {
+            border: 3px solid blue;
+        }
+        .wrapper {
+            border: 3px dotted black;
+        }
+        </style>
+    <script>
+    $(function () {
+        $("button").on("click", function () {
+        // class가 content인 각 요소를 포함하는 새로운 요소를 추가한다.
+        // $(".content").wrap("<div class='wrapper'></div>")
+
+        // class가 content인 모든 요소를 포함하는 새로운 요소를 추가한다.
+        $(".content").wrapAll("<div class='wrapper'></div>");
+        });
+    });
+    </script>
+</head>
+<body>
+    <h1>wrapAll() 메소드</h1>
+    <div class="content">첫 번째 컨텐츠 입니다.</div>
+    <div class="content">두 번째 컨텐츠 입니다.</div>
+    <button>div 요소 추가하기</button>
+</body>
+</html>

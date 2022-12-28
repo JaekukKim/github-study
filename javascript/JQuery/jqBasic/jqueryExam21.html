@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jq 21</title>
+  </head>
+  <body>
+    <h1>
+      .attr() 메소드.
+      <!-- arrt : attribute (속성) -->
+      <br />지금 보시고 있는 <span id="word" title="hello">글자</span>에 title 속성을 설정
+                            <!-- title 요소는 title에 들어간 값을 마우스 호버시 띄워준다 -->
+      합니다.
+    </h1>
+
+    <p>아래에 있는 버튼을 누르신 후에 마우스를 단어 위로 올려놓아 보세요.</p>
+
+    <button id="btnSetting">속성 값 설정하기</button>
+    <button id="btnRemove">속성 값 제거하기</button>
+
+    <script>
+      $(function () {
+        $("#btnSetting").on("click", function () {
+          $("#word").attr("title", "집에가고싶어요").css("color","green");
+          /*
+            attr() 메소드는 (attributeName: string, value: string | number)
+            의 식으로 쓰이며 요소이름, 값은 문자열 아니면 숫자형으로 기입해준다.
+            그럼 요소가 문자열 아니면 숫자형으로 기입해준걸로 바뀐다.
+            */
+        });
+        $("#btnRemove").on("click", function () {
+            $("#word").removeAttr("title").css("color","red");
+            /* removeAttr은 요소 이름만 기입해준다. */
+
+        });
+      });
+    </script>
+  </body>
+</html>

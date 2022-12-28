@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jqEvent03</title>
+    <style>
+        #text{
+            background-color: darkseagreen;
+            border: 2px solid rosybrown;
+            padding: 20px;
+            margin: 15px;
+            width: 200px;
+            height: 40px;
+        }
+    </style>
+</head>
+<body>
+    <h1>
+        요소의 표시와 숨김
+    </h1>
+    
+    <button id="btnShow">
+        요소 보이기
+    </button>
+    <button id="btnHide">
+        요소 숨기기
+    </button>
+    <hr>
+    <button id="btnShow2">
+        요소 천천히 보이기
+    </button>
+    <button id="btnHide2">
+        요소 천천히 숨기기
+    </button>
+    <button id="btnHide3">
+        요소 천천히 보여주거나 숨기기
+    </button>
+    <p>css의 display 속성 값을 none으로 설정하면 웹 페이지에서 보이지 않습니다.</p>
+    <p id ="text">이 글자들이 숨겨집니다.</p>
+    <script>
+        $(function(){
+            $("#btnShow").on("click", function(){
+                // $("#text").css("display","show"); 이 코드는 안됨
+                $("#text").show();
+            });
+            $("#btnHide").on("click", function(){
+                // $("#text").css("display","none");
+                $("#text").hide(); // 위 코드와 동일.
+            });
+            $("#btnShow2").on("click",function(){
+                $("#text").show(1000);
+                // id가 text인 요소를 1초에 걸쳐서 보여준다.
+                // 1000ms : 1초
+            })
+            $("#btnHide2").on("click",function(){
+                $("#text").hide(1000);
+                // id가 text인 요소를 1초에 걸쳐서 숨겨준다.
+                // 1000ms : 1초
+            })
+            $("#btnHide3").on("click",function(){
+                $("#text").toggle(1000);
+                // toggle : show() + hide() 이다. 보여주거나 숨겨줌.
+                // id가 text인 요소를 1초에 걸쳐서 숨겨준다.
+                // 1000ms : 1초
+            })
+        })
+    </script>
+</body>
+</html>

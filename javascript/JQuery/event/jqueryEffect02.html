@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jqEvent</title>
+    <style>
+        div{
+            background-color: aliceblue;
+            border: 5px solid wheat;
+            width: 200px;
+            height: 600px;
+            margin-top: 50px;
+            padding: 15px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>이펙트 효과의 정지와 중지</h1>
+    
+    <p>.stop() : 선택한 요소에서 실행 중인 모든 이펙트 효과를 즉시 중지시킴.</p>
+
+    <p>.finish() : stop()에 더해서 선택한 요소가 포함된 큐까지 제거하여 모든 이펙트 효과를 전부 종료.
+        현재 작업중인 작업 진행 후 강제종료라고 생각하면 편하다.
+    </p>
+    <button id="btnToggle">이펙트 ON/OFF</button>
+    <button id="btnStop">이펙트 멈춤</button>
+    <button id="btnFinish">이펙트 강제종료</button>
+
+    <div id="divBox">이펙트박스</div>
+
+    <script>
+       $(function(){
+        $("#btnToggle").on("click",function(){
+            $("#divBox").slideToggle(2000);
+        });
+       })
+       $(function(){
+        $("#btnStop").on("click",function(){
+            $("#divBox").stop();
+            /* stop()는 그 자리에서 멈춤 */
+        });
+       })
+       $(function(){
+        $("#btnFinish").on("click",function(){
+            $("#divBox").finish();
+            /* finish()는 "현재 진행중인 작업을 완료상태로" 강제종료 시켜버림. */
+        });
+       })
+    </script>
+</body>
+</html>

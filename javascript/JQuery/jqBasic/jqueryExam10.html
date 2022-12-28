@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jq 10</title>
+</head>
+<body>
+    <h1>
+        .html() 메소드 알아보기
+    </h1>
+
+    <p>
+        아래의 버튼을 누르시면 다음 단락에 새로운 글자를 설정하실 수 있습니다.
+    </p>
+    <button>
+        새로운 글자
+    </button>
+    <p id="text"></p>
+
+    <script>
+        $("button").on("click",function(){
+            let newText = $("h1").html();
+            /* html()을 그냥쓰면 요소의 정보를 가져온다. */
+            $("#text").html(newText); // id가 text인 요소에 새로운 글자를 설정
+
+            /* 
+            정리.
+            1. html()을 그냥 쓰면 요소의 정보를 가져옴
+            2. html()괄호 안에 내용을 쓰면 내용으로 대체됨.
+            */
+        })
+    </script>
+</body>
+</html>

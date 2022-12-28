@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>capturing 방식</title>
+    <style>
+      #divBox{
+        position: relative;
+        width: 200px;
+        height: 200px;
+        border: 4px solid red;
+        text-align: center;
+      }
+      #pBox{
+        position: absolute;
+        top: 25px;
+        left: 25px;
+        width: 125px;
+        height: 125px;
+        border: 4px solid blue;
+        text-align: center;
+      }
+      #spanBox{
+        position: absolute;
+        top: 25px;
+        left: 25px;
+        width: 75px;
+        height: 75px;
+        border: 4px solid green;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>capturing 방식</h1>
+    <p>
+      캡쳐링 전파 방식은 이벤트가 발생한 요소까지 dom트리의 최상위 부터
+      아래쪽으로 내려가면서 전파되는 방식이다.
+      즉 버블링의 반대란 소리다.
+    </p>
+    <p>
+      캡쳐링 전파 방식은 이벤트의 대상이 되는 요소에 이벤트가 전달되기 전에 상위
+      요소에 등록된 이벤트 리스너가 이를 가로채거나 잡아낼 수 있다
+    </p>
+
+    <div id="divBox">
+      div박스
+      <p id="pBox">p박스
+        <span id="spanBox">span박스</span>
+      </p>
+    </div>
+    <p id="text">클릭한 결과를 여기다가 출력해보겠습니다.</p>
+    <script>
+      /* 
+      캡쳐링 방식에서 하나 틀린건 이벤트 리스너에 요소를 추가해주는 점이다.
+      이벤트 리스너 맨 뒤에 세번째 파라미터인 true를 넣어주면된다.
+      */
+      document.getElementById("divBox").addEventListener("click",divClick, true);
+      document.getElementById("pBox").addEventListener("click",pClick, true);
+      document.getElementById("spanBox").addEventListener("click",spanClick, true);
+
+      function divClick() {
+        document.getElementById("text").innerHTML
+        += "<br>이벤트 이름 : " + event.target.tagName + ", this : " + this.tagName;
+        
+      }
+      function pClick() {
+        document.getElementById("text").innerHTML
+        += "<br>이벤트 이름 : " + event.target.tagName + ", this : " + this.tagName;
+        
+      }
+      function spanBox(){
+        document.getElementById("text").innerHTML
+        += "<br>이벤트 이름 : " + event.target.tagName + ", this : " + this.tagName;
+        
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>eventListner</title>
+  </head>
+  <body>
+    <h1>addEventListner</h1>
+    <button id="btn">글자들을 보여주기</button>
+    <p id="text">여기에 글자가 나타납니다.</p>
+
+    <script>
+      let showBtn = document.getElementById("btn");
+      showBtn.addEventListener("click", showText);
+      /* showBtn에 click(key)라는 이벤트가 발생하면 showText 함수(값)가 호출된다. */
+      /* value 부분에는 ()를 제외하고 함수의 이름만 기입한다. */
+      
+      function showText() {
+        document.getElementById("text").innerHTML = "글자가 바뀌었습니다.";
+      }
+    </script>
+  </body>
+</html>

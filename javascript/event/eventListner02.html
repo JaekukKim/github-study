@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>리스너 여러개</title>
+  </head>
+  <body>
+    <h1>여러개의 이벤트 리스너를 등록하여 사용하기.</h1>
+    <p>아래의 버튼 위에 마우스를 올리거나 클릭해보세요.</p>
+    <button id="btn">클릭</button>
+    <p id = "text"></p>
+    <script>
+        let bin = document.getElementById("btn");
+        btn.addEventListener("click", btnClick);
+        btn.addEventListener("mouseover",btnMouseOver);
+        /* mouseover : 마우스 올렸을 때 */
+        btn.addEventListener("mouseout",btnMouseOut);
+        /* mouseout : 마우스 벗어났을때 때 */
+
+        function btnClick(){
+          /* 이벤트 리스너는 자기 자신 삭제과정도 가능하며, 자기 자신 삭제도 가능하다. */
+          btn.removeEventListener("mouseover",)
+          document.getElementById("text").innerHTML = "클릭되었습니다";
+        }
+
+        function btnMouseOver() {
+          document.getElementById("text").innerHTML = "마우스가 올라가있습니다";
+
+        }
+
+        function btnMouseOut() {
+          document.getElementById("text").innerHTML = "마우스가 범위를 벗어났습니다.";
+        }
+    </script>
+  </body>
+</html>

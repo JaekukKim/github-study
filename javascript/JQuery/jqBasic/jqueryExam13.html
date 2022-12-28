@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jq 13</title>
+</head>
+<body>
+    <h1>
+        .Prepend() 메소드
+    </h1>
+    <p>
+        .Prepend() 메소드는 선택한 요소의 처음에 새로운 요소나
+        컨텐츠를 추가한다.
+    </p>
+    <p>This is a paragraph</p>
+
+    <ol>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ol>
+    <button id="btn01">Prepend Text</button>
+    <button id="btn02">Prepend List Item</button>
+
+    <script>
+        $(function(){
+            $("#btn01").on("click",function(){
+                $("p").prepend("<b>추가된요소입니다.</b>");
+            });
+        })
+
+        $(function(){
+            $("#btn02").on("click",function(){
+                $("ol").prepend("<li>새로 추가된 리스트 요소입니다</li>");
+            });
+        })
+    </script>
+</body>
+</html>

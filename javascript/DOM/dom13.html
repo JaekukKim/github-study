@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>dom12</title>
+  </head>
+  <body>
+    <h1>브라우저 창 열기, 닫기</h1>
+    <button onclick="openWindow()">새로운 창 열기</button>
+    <button onclick="closeWindow()">창 닫기</button>
+
+    <script type="text/javascript">
+      var newWindow;
+      
+      function openWindow(){
+        newWindow = window.open("http://www.naver.com");
+
+      }
+
+      function closeWindow(){
+        newWindow.close();
+      }
+      
+    </script>
+  </body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ani03</title>
+    <style>
+      #divBox{
+        width: 100px;
+        height: 100px;
+        background-color: bisque;
+        position: absolute;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>animation 효과</h1>
+
+    <p>
+      아래의 버튼을 계속 눌러보세요.
+    </p>
+    <button>애니메이션 시작</button>
+    <hr>
+    <div id="divBox">애니메이션 박스</div>
+
+    <script>
+      $(function(){
+        /* 클릭을 할때마다 아래가 계속 누적되어 실행된다. */
+        $("button").click(function () {
+          $("div").animate({
+            left : '+=100px', /* 원래 값에다가 100씩 누적시키는 방식은 왼쪽처럼 가능. */
+            width : '+=100px',
+            height : '+=100px',
+          })
+        });
+      })
+    </script>
+  </body>
+</html>

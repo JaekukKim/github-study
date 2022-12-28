@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jqFade</title>
+    <style>
+        div{
+            padding: 15px;
+            margin: 15px;
+            width: 200px;
+            height: 200px;
+            background-color: blanchedalmond;
+            border: 2px solid greenyellow;
+            opacity: 0.7;
+            text-align: center;
+        }
+        button{
+            position: relative;
+            
+        }
+    </style>
+</head>
+<body>
+    <h1>
+        페이드 효과에 투명도 설정
+    </h1>
+    
+    <button id="btnFade">
+        페이드 아웃
+    </button>
+    
+    <div class="box" id="divBox1">divBox1</div>
+    <div class="box" id="divBox2">divBox2</div>
+    <div class="box" id="divBox3">divBox3</div>
+
+    <script>
+        $(function(){
+            $("#btnFade").on("click",function(){
+                /* id가 divBox1인 요소를 3초에 걸쳐서 opacity속성을 0.1까지 바꾼다. */
+                // => fadeTo메소드 사용.
+                $("#divBox1").fadeTo(2000, 0.1);
+            });
+            $("#btnFade").on("click",function(){
+                
+                $("#divBox2").fadeTo(3000, 0.2);
+            });
+            $("#btnFade").on("click",function(){
+                
+                $("#divBox3").fadeTo(4000, 0.3);
+            });
+            
+        })
+    </script>
+</body>
+</html>

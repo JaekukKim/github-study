@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jq 22</title>
+  </head>
+  <body>
+    <h1>
+      .prop() 메소드
+      <!-- prop : property -->
+    </h1>
+
+    <form>
+      <input type="checkbox" name="lecture" value="html" checked />HTML<br />
+      <input type="checkbox" name="lecture" value="css" />CSS<br />
+      <input type="checkbox" name="lecture" value="java" />JAVA<br />
+      <input type="checkbox" name="lecture" value="spring" checked/>SPRING<br />
+      <input type="checkbox" name="lecture" value="javascript" />JAVASCRIPT
+      <hr />
+      <!-- 위 태그는 기본적으로 체크된 상태에서 나옴 -->
+    </form>
+
+    <button id="btnSetting">CSS에 프로퍼티 값을 설정하기</button>
+    <button id="btnRemove">CSS의 프로퍼티 값을 제거하기</button>
+
+    <script>
+      $(function () {
+        $("#btnSetting").on("click", function () {
+          $("input[value='css']").prop({ checked: true });
+        });
+
+        $("#btnRemove").on("click", function () {
+          $("input[value='css']").prop({ checked: false });
+        });
+      });
+    </script>
+  </body>
+</html>

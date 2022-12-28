@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jqEvent04</title>
+    <style>
+     #divBox {
+        width: 200px;
+        height: 200px;
+        background-color: aquamarine;
+        border: 3px solid darkgoldenrod;
+        margin: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>
+      fade 효과에 대해 알아보자.<br />
+      fade in<br />
+      fade out<br />
+    </h1>
+
+    <button id="fadeIn">Fade In</button>
+    <button id="fadeOut">Fade Out</button>
+
+    <div id="divBox"></div>
+    <p>
+      js,jq에서 fade in, fade out 효과는 opacity 값을 빠르게 변경하여
+      표현합니다.
+    </p>
+
+    <script>
+        $(function () {
+            $("#fadeIn").on("click", function(){
+                $("#divBox").fadeIn(1000);
+                // 괄호 안에 숫자를 넣어주면 1000ms : 1초 단위로 설정 할 수 있다.
+            })
+            $("#fadeOut").on("click", function(){
+                $("#divBox").fadeOut(1000);
+            })
+        })
+    </script>
+  </body>
+</html>

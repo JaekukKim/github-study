@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jq 09</title>
+</head>
+<body>
+    <h1>
+        width() 와 height() 사용하기
+    </h1>
+
+    <p>
+        아래의 버튼을 사용하여 div 요소의 크기를 알아내거나 변경할 수 있습니다.
+    </p>
+    <button id="getter">크기 알아내기</button>
+    <button id="setterSmall">크기 줄이기</button>
+    <button id="setterBig">크기 늘리기</button>
+    <br>
+    <br>
+    <div id="box" style="width: 400px; height: 400px; background-color: rgba(121, 217, 26, 0.531);"></div>
+    <p id=text></p>
+    <script>
+        $(function(){
+            $("#getter").on("click",function(){
+                let size = "너비는 " + $("#box").width() + "px 이고 <br>" +
+                "높이는 " + $("#box").height() + "px 입니다.<br>"
+                $("#text").html(size);
+            })
+        })
+        $(function(){
+            $("#setterSmall").on("click",function(){
+                let wid = $("#box").width();
+                let hei = $("#box").height();
+
+                $("#box").width(wid/2).height(hei/2);
+                /* width,height 괄호 안에 값을 넣어주면 그 값이 계산되어 변경된다. */
+            })
+        })
+        $(function(){
+            $("#setterBig").on("click",function(){
+                let wid = $("#box").width();
+                let hei = $("#box").height();
+                $("#box").width(wid+10).height(hei+10);
+            })
+        })
+    </script>
+</body>
+</html>

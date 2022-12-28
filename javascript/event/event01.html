@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>event01</title>
+  </head>
+  <body>
+    <h1>이벤트 발생</h1>
+    <p onclick="changeThis(this)">글자를 클릭해보세요</p>
+    <!-- this라는건 함수의 매개변수를 받겠다는 의미이다. 이름만 저렇게 설정한거지
+    뭔가 대단한 의미가 있는건 아니다. -->
+
+    <script>
+        /* changeThis(this)와 changeThis(element)에서 this와 element는 같은 의미이다. */
+      function changeThis(element) {
+        element.innerHTML = "내용이 이걸로 바뀌었습니다.";
+        
+      }
+    </script>
+  </body>
+</html>

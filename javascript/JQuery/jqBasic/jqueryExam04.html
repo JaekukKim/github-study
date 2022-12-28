@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jq 04</title>
+  </head>
+  <body>
+    <h1>클래스 선택자</h1>
+
+    <p class="p1">jq로 클래스 선택자를 사용해봅니다.</p>
+    <p class="p2">클래스 선택자로 특정한 요소들을 같이 선택이 가능합니다</p>
+    <p class="p1">
+      클래스는 같은 이름으로 동시선언이 가능하기에<br />
+      선택자는 묶음으로 작업할 때 용이합니다.
+    </p>
+    <p class="p2">이제 위 글씨들을 한번씩 클릭해보세요.</p>
+
+    <script>
+      // jq
+      /* $(function () {
+        $(".p1").on("click", function () {
+          $(".p1").css("backgroundColor", "#e9e9e9");
+        });
+      });
+      $(function () {
+        $(".p2").on("click", function () {
+          $(".p2").css("backgroundColor", "green");
+        });
+      }); */
+
+      // js
+      /* window.onload는 단 하나만 선언이 가능하다. 함수를 변수선언처럼 해주면 순차적으로 실행이 된다. */
+      function changeP1() {
+        var p1 = document.getElementsByClassName("p1");
+
+        for (let i = 0; i < p1.length; i++) {
+          p1[i].addEventListener("click", function () {
+            p1[i].style.backgroundColor = "#e9e9e9";
+          });
+        }
+      }
+      function changeP2() {
+        var p2 = document.getElementsByClassName("p2");
+
+        for (let i = 0; i < p2.length; i++) {
+          p2[i].addEventListener("click", function () {
+            p2[i].style.backgroundColor = "green";
+          });
+        }
+      }
+      changeP1();
+      changeP2();
+    </script>
+  </body>
+</html>

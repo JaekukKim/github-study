@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ani01</title>
+    <style>
+      div {
+        width: 200px;
+        height: 200px;
+        background-color: greenyellow;
+        position: absolute;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>jquery animation</h1>
+
+    <button>애니메이션 시작</button>
+    <p>
+      HTML 요소의 위치를 변화시킨다.<br />
+      기본적으로 모든 HTML요소는 정적 위치를 가지며 이동할 수 없습니다.<br />
+      <strong
+        >위치를 조작하기 위해선 먼저 요소의 css위치 속성을 상대적, 고정 또는
+        절대값으로 설정해야 합니다.
+      </strong>
+      <br />
+      상대적 : relative <br>절대값 : absolute <br>고정 : fixed
+    </p>
+    <div id="divBox">absolute div 박스</div>
+
+    <script>
+      $(function () {
+        $("button").click(function () {
+          $("#divBox").animate({
+            left : '800px',
+            opacity : '0.5',
+            height : '300px',
+            width : '500px'
+          });
+        });
+       
+      });
+    </script>
+  </body>
+</html>

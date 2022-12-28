@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    <script>
-        var x = 1;
-        var y = 2;
-        function plus() {
-            return x+y;
-        }
-        document.write(plus());
+  </head>
+  <body>
+    <button onclick="plus()">이곳을 눌러보세요</button>
+    <div id="plus">이곳이 바뀌게 됩니다.</div>
 
+    <script>
+      var x = 1;
+      var y = 2;
+      function plus() {
+        return document.getElementById("plus").innerHTML = x + y;
+      }
+      
     </script>
-</body>
+  </body>
 </html>

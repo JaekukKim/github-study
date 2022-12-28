@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jq 08</title>
+</head>
+<body>
+    <h1>
+        Form 요소의 선택
+    </h1>
+
+    <form>
+        <input type="checkbox" name="animal" value="dogDog"><span>갓댕이</span><br/>
+        <input type="checkbox" name="animal" value="cat"><span>족냥이</span><br/>
+        <input type="checkbox" name="animal" value="eagle"><span>대머리독수리</span><br/>
+        <input type="checkbox" name="animal" value="gorani"><span>고라니</span><br/>
+        <input type="checkbox" name="animal" value="kobbulso"><span>소말리아코뿔소</span><br/>
+    </form>
+    <button>필터링을 시작합니다.</button>
+    
+    <script>
+        $(function(){
+            $("button").on("click", function () {
+               // 체크되어 있는 모든 요소를 선택한다.
+               $(":checked").next().text("이 요소는 체크가 되어 있습니다.");
+                /* next()는 선택한 요소의 다음 요소를 선택하는 jq메소드이다.
+                괄호 안 :checked는 input 태그가 선택 되 있는거고 next()로
+                그 다음 요소를 지정해주면 input태그 안의 span태그가 선택되는 것이다.
+                next()로 선택된 span태그의 내용을 text("내용")으로 바꿔준다. */
+               /*
+                has를 사용할 때 : 만 사용해도 된다....! 
+                위 코드는 체크가 되어있는 요소만 선택한다는 뜻. 
+               */
+            });
+        })
+    </script>
+</body>
+</html>

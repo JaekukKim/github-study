@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jq06</title>
+</head>
+<body>
+    <h1>
+        선택한 요소의 길이
+    </h1>
+
+    <ul>
+        <li>java</li>
+        <li>html</li>
+        <li>jsp</li>
+        <li>spring</li>
+        <li>python</li>
+        <li>javascript</li>
+    </ul>
+    <button>선택한 요소의 길이</button>
+    <p id="len"></p>
+
+    <script>
+        let items = $("li");
+        /* 위와 같이 쓰면 li요소가 모두 선택되고 items에 저장된다. */
+        $("button").on("click", function(){
+            $("#len").text("저장된 li 요소의 총 갯수는 : " + items.length);
+        })
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jqslide</title>
+    <style>
+      #divBox {
+        width: 100px;
+        height: 500px;
+        background-color: salmon;
+        border: 6px dotted whitesmoke;
+        margin: 15px;
+        margin-top: 50px;;
+        padding: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>슬라이드 업 슬라이드 다운.</h1>
+
+    <button id="slideUp">업</button>
+    <button id="slideDown">다운</button>
+    <button id="slideUp1">업(1초)</button>
+    <button id="slideDown1">다운(1초)</button>
+    <button id="slideUpAndDown">업앤다운</button>
+    <div id="divBox"></div>
+
+    <script>
+      $(function () {
+        $("#slideUp").on("click", function () {
+            $("#divBox").slideUp();
+        });
+        $("#slideDown").on("click", function () {
+            $("#divBox").slideDown();
+        });
+        $("#slideUp1").on("click", function () {
+            $("#divBox").slideUp(1000);
+        });
+        $("#slideDown1").on("click", function () {
+            $("#divBox").slideDown(1000);
+        });
+        $("#slideUpAndDown").on("click", function () {
+            $("#divBox").slideToggle();
+        });
+      });
+    </script>
+  </body>
+</html>

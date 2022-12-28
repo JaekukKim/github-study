@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>dom11</title>
+  </head>
+  <body>
+    <h1>browser 창의 크기 조절</h1>
+    <p>웹 브라우저의 크기를 조절한 후에 화면을 리프레쉬 하여 보세용.</p>
+
+    <script type="text/javascript">
+      var winWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+      var winHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+
+      document.write("웹 브라우저의 너비 : " + winWidth + "픽셀<br/>높이 : " + winHeight + "픽셀");
+    </script>
+  </body>
+</html>

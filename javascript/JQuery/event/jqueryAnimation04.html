@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jqEvent</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: gainsboro;
+            position: absolute;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>jquery animation</h1>
+
+    <p>
+      HTML 요소의 위치를 변화시킨다.<br />
+      기본적으로 모든 HTML요소는 정적 위치를 가지며 이동할 수 없습니다.<br />
+      <strong
+        >위치를 조작하기 위해선 먼저 요소의 css위치 속성을 상대적, 고정 또는
+        절대값으로 설정해야 합니다.
+      </strong>
+      <br />
+      상대적 : relative <br>절대값 : absolute <br>고정 : fixed
+      <hr>
+      늘어나는 버튼 줄어드는 버튼을 만들어봅시다.
+    </p>
+    <button id="sizeUp">크기 늘리기</button>
+    <br>
+    <button id="sizeDown">크기 줄이기</button>
+    <div id="divBox">div 박스</div>
+    
+    <script>
+        /* 크기 늘리기 */
+        $(function(){
+            $("#sizeUp").click(function(){
+                var div = $("div");
+
+                div.animate({
+                    height : '400px',
+                    opacity : '0.4',
+                }, 'slow');
+                div.animate({
+                    width : '400px',
+                    opacity : '0.8',
+                }, 'slow');
+                
+            })
+            
+        })
+        /* 크기 줄이기 */
+        $(function(){
+            $("#sizeDown").click(function(){
+                var div = $("div");
+                div.animate({
+                    height : '100px',
+                    opacity : '0.4',
+                }, 'slow');
+                div.animate({
+                    width : '100px',
+                    opacity : '0.4',
+                }, 'slow');
+            })
+        })
+    </script>
+</body>
+</html>

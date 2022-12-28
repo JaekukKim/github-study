@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jq02</title>
+</head>
+<body>
+    <h1>
+        HTML TAG 선택자
+    </h1>
+    <p>
+        지금부터 <span><strong>jquery</strong></span>를 알아보겠습니다.
+        마우스로 굵은 글씨를 클릭하여 변화를 알아보세요.
+    </p>
+    <script>
+        /* $() => (document).ready */
+        // jq
+        $(function () {
+            $("p").on("click", function () {
+                console.log("p태그를 클릭하셨습니다/n글자들 중 일부를 바꿔보겠습니다.");
+                $("span").css("fontSize", "40px");
+            });
+        })
+        //js
+        window.onload = function () {
+            let p = document.querySelector("p");
+            let sp = document.querySelector("span");
+            p.addEventListener("click", function(){
+                alert("p태그 클릭, 글자변경");
+                sp.style.fontSize = "40px";
+            })
+        }
+        
+    </script>
+</body>
+</html>

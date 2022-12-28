@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>dom9</title>
+  </head>
+  <body>
+    <h1>DOM 요소의 style 변경하기</h1>
+    <p id="text">이 글자들은 기본색이 검정입니다.</p>
+
+    <button onclick="changeColor1()">파란색변경</button>
+    <button onclick="changeColor2()">초록색변경</button>
+    <button onclick="changeColor3()">빨간색변경</button>
+
+    <script type="text/javascript">
+      var color = document.getElementById("text");
+      function changeColor1() {
+        color.style.color = "blue";
+      }
+      function changeColor2() {
+        color.style.color = "green";
+      }
+      function changeColor3() {
+        color.style.color = "red";
+      }
+    </script>
+  </body>
+</html>

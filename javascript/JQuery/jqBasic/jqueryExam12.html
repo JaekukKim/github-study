@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jq 12</title>
+</head>
+<body>
+    <h1>
+        아이템을 추가하는 방법에 대해 알아보자.<br>
+        .append() 메소드는 선택한 요소의 마지막에 새로운 요소나 컨텐츠를 추가한다
+    </h1>
+
+    <ul id="list">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+    <button>아이템(요소) 추가하기</button>
+    <button id="delete">아이템 삭제하기</button>
+    
+    <script>
+        $(function(){
+            $("button").on("click", function(){
+                $("#list").append("<li>새로 추가된 아이템.</li>");
+                /* append()에서 괄호 안에는 태그형식이나 문법에 맞춰 작성 해 주어야 한다. */
+            });
+        })
+        $(function(){
+            $("#delete").on("click", function (){
+                $("#list:has(li)").remove();
+            
+                
+            })
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ani01</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background-color: greenyellow;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <h1>jquery animation</h1>
+    
+    <button>애니메이션 시작</button>
+    <p>HTML 요소의 위치를 이동시킨다.</p>
+    <div id="divBox"></div>
+
+    <script>
+        $(function(){
+            $("button").click(function(){
+                $("div").animate({left : "150px"})
+            });
+        })
+    </script>
+</body>
+</html>
